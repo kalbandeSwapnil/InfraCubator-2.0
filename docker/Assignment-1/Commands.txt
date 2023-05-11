@@ -1,0 +1,14 @@
+# Start nginx server
+ docker run -d nginx
+
+#Portforward to local
+ docker run -d -p 80:80 --name nignx_container nginx:latest
+
+#Check logs
+ docker logs -f nignx_container
+
+#Go inside the container
+ docker exec -it nignx_container bash
+
+#Stop the container
+ docker stop nignx_container

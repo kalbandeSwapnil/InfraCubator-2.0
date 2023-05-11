@@ -1,0 +1,17 @@
+
+#Create docker volume and call it demo_volume
+docker volume create demo_volume
+
+#Create Container and attach volume to it
+docker run -d -v /var/lib/docker/volumes/demo_volume/_data:/opt swapnilkalbande/demo-go-app:v2
+
+# Add some files in the folder
+
+
+#Create 2nd container and attach volume to it
+docker run -d -v /var/lib/docker/volumes/demo_volume/_data:/opt swapnilkalbande/demo-go-app:v2
+
+docker exec -it <ContainerId> sh
+
+cd /opt
+ls

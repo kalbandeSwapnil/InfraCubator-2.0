@@ -1,0 +1,20 @@
+
+#build image
+ docker build -t demo-go-app .
+
+ #run the app
+docker run -p 9080:8080 demo-go-app
+
+#test endpoint
+curl --location --request GET 'http://localhost:9080/'
+
+#tag image with v1
+docker tag demo-go-app swapnilkalbande/demo-go-app:v1
+
+#history
+docker history learning
+
+#push image to dockerhub
+docker login
+
+docker push swapnilkalbande/demo-go-app:v1

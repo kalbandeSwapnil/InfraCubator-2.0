@@ -1,0 +1,5 @@
+##build dockerfile
+docker build . -t demo-go-app:v2
+
+##run docker file
+docker run -d -p 8080:8080 demo-go-app:v2
